@@ -7,37 +7,37 @@ public class Tekst extends Innlegg {
 
 	// TODO: objektvariable 
 	
+	private String tekst;
+	
 	public Tekst () {
 		
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		super(id, bruker, dato);
+		this.tekst = tekst;
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		super(id, bruker, dato, likes);
+		this.tekst = tekst;
 	}
 	
 	public String getTekst() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return tekst;
 	}
 
 	public void setTekst(String tekst) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.tekst = tekst;
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return "TEKST\n" + super.toString() + tekst + "\n";
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-			
-		throw new UnsupportedOperationException(TODO.method());
-				
+		return "\t\t<h2>" + super.getBruker() + "@" + super.getDato() + " [" + super.getLikes() + "]</h2>\n" + "\t\t<p>" + getTekst() + "</p>\n\t\t<hr>\n";
 	}
 }
